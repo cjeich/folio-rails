@@ -7,8 +7,28 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+<header>
+	<div class="navbar navbar-inverse">
+	  <div class="navbar-inner">
+	    <a class="brand" href="/">Folio :: </a>
+	    <ul class="nav">
+	      <li><a href="/">Home</a></li>
+	      <li><a href="/users">Users</a></li>
+	      <li><a href="/projects">Projects</a></li>
+	      <li><a href="/about">About</a></li>
+	    </ul>
+	  </div>
+</div>
+</header>
+<section class="container">
+	<%= yield %>
+</section>
+<footer class="footer navbar navbar-fixed-bottom">
+	<div class="navbar-inner">
+	<p class="navbar-text" style="text-align: center;">
+		&copy; 2012 Chris Eich cjeich [at] gmail [dot] com. All Rights Reserved.
+	</p>
+	</div>
+</footer>
 </body>
 </html>

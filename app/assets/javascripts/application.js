@@ -12,4 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require bootstrap/bootstrap
 //= require_tree .
+
+
+// Add tooltip to delete buttons
+$(document).ready(function(){
+	$('.delete-button').tooltip({'placement':'right'});
+});

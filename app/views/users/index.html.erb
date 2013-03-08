@@ -1,0 +1,27 @@
+<h1>Users <%= link_to raw('<i class="icon-plus"></i>'), new_user_path, class: 'btn pull-right', rel: 'tooltip', title: 'Create a new User' %></h1>
+
+<table class="table table-striped table-condensed table-hover table-bordered">
+  <tr>
+    <th>Screen name</th>
+    <th>Email</th>
+    <th>First name</th>
+    <th>Last name</th>
+    <th></th>
+  </tr>
+
+<% @users.each do |user| %>
+  <tr>
+    <td><%= user.screen_name %></td>
+    <td><%= user.email %></td>
+    <td><%= user.first_name %></td>
+    <td><%= user.last_name %></td>
+    <td>
+      <div class="btn-group" style="text-align:center;">
+        <%= link_to raw('<i class=" icon-circle-arrow-right icon-white"></i>'), user, class: 'btn btn-inverse', rel: 'tooltip', title: 'View' %>
+        <%= link_to raw('<i class=" icon-edit icon-white"></i>'), edit_user_path(user), class: 'btn btn-inverse', title: 'Edit', rel: 'tooltip' %>
+        <%= link_to raw('<i class="icon-trash icon-white"></i>'), user, method: :delete, class: 'btn btn-danger delete-button', title: 'Delete', data: {  confirm: 'Do you really want to delete this user?' } %>
+      </div>
+    </td>
+  </tr>
+<% end %>
+</table>

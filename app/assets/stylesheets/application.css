@@ -8,6 +8,52 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
+ *= require twitter/bootstrap
  *= require_self
  *= require_tree .
  */
+
+/** Generic Styles **/
+dl dd+dt { margin-top: .5em; }
+
+/** Header Styles **/
+header .navbar-inner 
+{ 
+	border-radius: 0; 
+	border-bottom: 1px solid #999; 
+	box-shadow: 0px 0px 25px -5px hsla(0, 0%, 8%, .95);
+}
+
+/** About Page **/
+
+.well.about-me, .hero-unit.about-me
+{
+	background:
+		-webkit-linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
+		-webkit-linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
+		-webkit-linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px,
+		-webkit-linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,
+		-webkit-linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
+		-webkit-linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
+	background-color: #131313;
+	background-size: 20px 20px;
+
+	border: 1px solid hsl(0, 0%, 60%);
+	box-shadow: 0 0 45px -2px hsla(0, 0%, 0%, 0.5) inset;
+}
+
+.well.about-me .title,
+.hero-unit.about-me .title
+{
+	color: #ccc;
+}
+
+.well.about-me .title small,
+.hero-unit.about-me .title small
+{
+	color: #aaa;
+	text-shadow: -1px -1px 2px rgba(100,100,100, .75);
+	position: relative;
+	top: -.5em;
+}
+

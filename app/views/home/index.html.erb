@@ -1,0 +1,49 @@
+<div class="hero-unit page-header about-me">
+	<h1 class="title">Folio! <small class="sub-title">A Site for <b>putting your stuff</b> and <b>getting things done</b>.</small></h1>
+</div>
+
+<p class="lead">Ever feel like you needed a project management system that you had coded yourself, that fit all of your needs and had a snappy awesome user interface that showcased some of the best of your coding and design skills? I did and thats why <a href="/about">I</a> coded folio. A quick way to showcase my design and coding skills and show some of the things I've been working on recently.</p>
+
+<section id="recent_items" class="row">
+	<div class="span4">
+		<h2>Newest Users</h2>
+		<ul id="projects">
+		<%	@users.each do |user| %>
+			<li>
+				  <h4><%= link_to raw('<i class="icon-edit"></i>'), edit_user_path(user), class: 'btn btn-mini' %> <%= link_to user.screen_name.titleize, user %> </h3>
+			</li>
+		<% end %>
+		</ul>
+	</div>
+
+	<div class="span4">
+		<h2>Recent Projects</h2>
+		<ul id="projects">
+		<%	@projects.each do |project| %>
+			<li>
+				  <h3 class="title"><%= link_to project.name.titleize, project %></h3>
+				  <p class="description">
+				  	<%= truncate(project.description, :length => 300, :separator => ' ') %>
+				  	<%= link_to 'edit', edit_project_path(project) %>
+				  </p>
+			</li>
+		<% end %>
+		</ul>
+	</div>
+
+	<div class="span4">
+		<h2>Recent Comments</h2>
+		<ul id="projects">
+		<%	@projects.each do |project| %>
+			<li>
+				  <h3 class="title"><%= link_to project.name.titleize, project %></h3>
+				  <p class="description">
+				  	<%= truncate(project.description, :length => 300, :separator => ' ') %>
+				  	<%= link_to 'edit', edit_project_path(project) %>
+				  </p>
+			</li>
+		<% end %>
+		</ul>
+	</div>
+
+</section>
